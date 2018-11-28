@@ -1,5 +1,5 @@
 package br.com.web.dao;
 
-public interface DAO {
+public interface DAO<T> {
 
 }
