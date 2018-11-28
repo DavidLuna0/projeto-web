@@ -1,6 +1,7 @@
 package br.com.web.modelos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -18,7 +19,7 @@ public class Concessionaria implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@Column(nullable = false)
 	private String nome;
@@ -27,10 +28,26 @@ public class Concessionaria implements Serializable {
 	private Endereco endereco;
 
 	@OneToMany
-	private List<Carro> carros;
+	private List<Carro> carros = new ArrayList<Carro>();
 
 	@OneToMany
-	private List<Cliente> clientes;
+	private List<Cliente> clientes = new ArrayList<Cliente>();
+	
+	public void adicionaCarros(Carro carro) {
+		this.carros.add(carro);
+	}
+	
+	public void adicionaCliente(Cliente cliente) {
+		this.clientes.add(cliente);
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
 	public String getNome() {
 		return nome;
@@ -56,7 +73,7 @@ public class Concessionaria implements Serializable {
 		this.clientes = clientes;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

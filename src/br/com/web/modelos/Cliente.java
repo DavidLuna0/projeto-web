@@ -16,9 +16,9 @@ public class Cliente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
-	@Column(nullable=false)
+	@Column(nullable=false, length=11)
 	private String cpf;
 
 	@Column(nullable=false)
@@ -51,7 +51,7 @@ public class Cliente implements Serializable {
 		this.endereco = endereco;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

@@ -17,7 +17,7 @@ public class Carro implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@Column(nullable = false)
 	private String modelo;
@@ -52,7 +52,7 @@ public class Carro implements Serializable {
 		this.valor = valor;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

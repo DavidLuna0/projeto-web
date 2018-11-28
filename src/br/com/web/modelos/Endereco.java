@@ -17,7 +17,7 @@ public class Endereco implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@Column(nullable = false)
 	private String rua;
@@ -73,7 +73,7 @@ public class Endereco implements Serializable {
 		this.uf = uf;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
